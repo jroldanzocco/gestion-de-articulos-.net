@@ -22,7 +22,7 @@ namespace Administracion_de_articulos
         {
             List<Articulo> listaArticulos = new List<Articulo>();
             AccesoDatos datos = new AccesoDatos();
-            datos.setConsulta("SELECT A.Id, A.Codigo, A.Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, A.ImagenUrl, A.Precio  FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
+            datos.setConsulta("SELECT A.Id, Codigo, Nombre, A.Descripcion, M.Descripcion Marca, C.Descripcion Categoria, ImagenUrl, Precio  FROM ARTICULOS A INNER JOIN MARCAS M ON A.IdMarca = M.Id INNER JOIN CATEGORIAS C ON A.IdCategoria = C.Id");
             datos.ejecutarLectura();
             while (datos.Lector.Read())
             {
